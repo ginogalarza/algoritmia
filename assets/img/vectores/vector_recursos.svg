@@ -1,0 +1,58 @@
+<svg viewBox="0 0 380 280" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Ilustración de simulador y código interactivo">
+    <defs>
+        <linearGradient id="grad-editor" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1e293b" />
+            <stop offset="100%" stop-color="#0f172a" />
+        </linearGradient>
+        <filter id="glow-editor" x="-10%" y="-10%" width="120%" height="120%">
+            <feGaussianBlur stdDeviation="4" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+    </defs>
+
+    <!-- Ventana Editor IDE -->
+    <rect x="25" y="25" width="330" height="230" rx="10" fill="url(#grad-editor)" stroke="#334155" stroke-width="2" />
+    
+    <!-- Barra superior con botones macOS -->
+    <path d="M 25 35 Q 25 25 35 25 L 345 25 Q 355 25 355 35 L 355 52 L 25 52 Z" fill="#0f172a" />
+    <line x1="25" y1="52" x2="355" y2="52" stroke="#334155" stroke-width="1" />
+    <circle cx="42" cy="38" r="4.5" fill="#ef4444" />
+    <circle cx="56" cy="38" r="4.5" fill="#f59e0b" />
+    <circle cx="70" cy="38" r="4.5" fill="#10b981" />
+    <text x="190" y="42" fill="#94a3b8" font-family="'Fira Code', monospace" font-size="10" text-anchor="middle">binary_search.py</text>
+
+    <!-- Código en pantalla -->
+    <text x="45" y="78" fill="#ec4899" font-family="'Fira Code', monospace" font-size="11">def <tspan fill="#38bdf8">binary_search</tspan><tspan fill="#f8fafc">(arr, target):</tspan></text>
+    <text x="65" y="96" fill="#94a3b8" font-family="'Fira Code', monospace" font-size="11">left, right = 0, len(arr) - 1</text>
+    <text x="65" y="114" fill="#94a3b8" font-family="'Fira Code', monospace" font-size="11">mid = (left + right) // 2</text>
+
+    <!-- Bloques visuales de memoria RAM / Arreglo -->
+    <rect x="45" y="135" width="40" height="36" rx="4" fill="#1e293b" stroke="#475569" stroke-width="1.5" />
+    <text x="65" y="158" fill="#94a3b8" font-family="'Fira Code', monospace" font-size="12" font-weight="bold" text-anchor="middle">2</text>
+
+    <rect x="90" y="135" width="40" height="36" rx="4" fill="#1e293b" stroke="#475569" stroke-width="1.5" />
+    <text x="110" y="158" fill="#94a3b8" font-family="'Fira Code', monospace" font-size="12" font-weight="bold" text-anchor="middle">5</text>
+
+    <rect x="135" y="135" width="40" height="36" rx="4" fill="#1e293b" stroke="#475569" stroke-width="1.5" />
+    <text x="155" y="158" fill="#94a3b8" font-family="'Fira Code', monospace" font-size="12" font-weight="bold" text-anchor="middle">8</text>
+
+    <!-- Elemento encontrado (Glow azul/cian) -->
+    <g filter="url(#glow-editor)">
+        <rect x="180" y="135" width="45" height="36" rx="4" fill="#0070f3" stroke="#38bdf8" stroke-width="2" />
+        <text x="202" y="158" fill="#ffffff" font-family="'Fira Code', monospace" font-size="13" font-weight="bold" text-anchor="middle">12*</text>
+    </g>
+
+    <rect x="230" y="135" width="40" height="36" rx="4" fill="#1e293b" stroke="#475569" stroke-width="1.5" />
+    <text x="250" y="158" fill="#94a3b8" font-family="'Fira Code', monospace" font-size="12" font-weight="bold" text-anchor="middle">23</text>
+
+    <rect x="275" y="135" width="40" height="36" rx="4" fill="#1e293b" stroke="#475569" stroke-width="1.5" />
+    <text x="295" y="158" fill="#94a3b8" font-family="'Fira Code', monospace" font-size="12" font-weight="bold" text-anchor="middle">45</text>
+
+    <!-- Puntero indicador visual -->
+    <polygon points="202,185 194,195 210,195" fill="#38bdf8" />
+    <text x="202" y="210" fill="#38bdf8" font-family="'Fira Code', monospace" font-size="10" font-weight="bold" text-anchor="middle">mid ptr</text>
+
+    <!-- Barra de estado / consola -->
+    <rect x="35" y="222" width="310" height="22" rx="4" fill="#0b1329" />
+    <text x="45" y="237" fill="#10b981" font-family="'Fira Code', monospace" font-size="10">✓ Match found: arr[3] == 12 · Complex: O(log n)</text>
+</svg>

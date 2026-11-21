@@ -1,0 +1,49 @@
+<svg viewBox="0 0 380 280" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Ilustración de ayuda y feedback educativo">
+    <defs>
+        <linearGradient id="grad-soporte-card" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0070f3" />
+            <stop offset="100%" stop-color="#7928ca" />
+        </linearGradient>
+        <filter id="glow-soporte" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="6" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+    </defs>
+
+    <!-- Fondo decorativo circular de ondas -->
+    <circle cx="190" cy="140" r="110" stroke="#0070f3" stroke-opacity="0.15" stroke-width="1.5" stroke-dasharray="4 4" />
+    <circle cx="190" cy="140" r="75" stroke="#7928ca" stroke-opacity="0.2" stroke-width="1.5" />
+
+    <!-- Burbuja principal: FAQ / Pregunta (Centro) -->
+    <g filter="url(#glow-soporte)">
+        <rect x="100" y="80" width="180" height="90" rx="16" fill="url(#grad-soporte-card)" />
+        <!-- Cola de la burbuja -->
+        <polygon points="140,170 160,170 145,188" fill="#5824b7" />
+    </g>
+
+    <!-- Contenido dentro de la tarjeta central -->
+    <text x="135" y="118" fill="#ffffff" font-family="'Inter', sans-serif" font-size="12" font-weight="bold">¿Cómo empiezo?</text>
+    <rect x="135" y="128" width="125" height="6" rx="3" fill="#ffffff" fill-opacity="0.6" />
+    <rect x="135" y="140" width="90" height="6" rx="3" fill="#ffffff" fill-opacity="0.4" />
+
+    <circle cx="118" cy="120" r="10" fill="#ffffff" fill-opacity="0.2" />
+    <text x="118" y="124" fill="#ffffff" font-family="'Fira Code', monospace" font-size="11" font-weight="bold" text-anchor="middle">?</text>
+
+    <!-- Burbuja flotante 1: Foco / Idea (Superior Derecha) -->
+    <g filter="url(#glow-soporte)">
+        <circle cx="300" cy="65" r="26" fill="#f59e0b" stroke="#ffffff" stroke-width="2.5" />
+        <text x="300" y="72" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="900" font-size="16" text-anchor="middle">💡</text>
+    </g>
+
+    <!-- Burbuja flotante 2: Verificado / Check (Inferior Izquierda) -->
+    <g filter="url(#glow-soporte)">
+        <circle cx="80" cy="195" r="24" fill="#10b981" stroke="#ffffff" stroke-width="2.5" />
+        <text x="80" y="202" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="900" font-size="15" text-anchor="middle">✓</text>
+    </g>
+
+    <!-- Tarjeta flotante 3: Respuesta rápida (Inferior Derecha) -->
+    <rect x="220" y="195" width="130" height="42" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+    <circle cx="238" cy="216" r="6" fill="#10b981" />
+    <text x="252" y="215" fill="#f8fafc" font-family="'Inter', sans-serif" font-size="10" font-weight="600">Soporte Activo</text>
+    <text x="252" y="227" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="9">Respuesta &lt; 24h</text>
+</svg>

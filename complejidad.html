@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complejidad Asintótica Notación Big O y Ejemplos de Código en AlgoSchool DSA.">
+    <title>AlgoSchool DSA - Complejidad Notación Big O & Código</title>
+
+    <!-- Fuentes Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Icono en svg -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230070f3'/><path d='M8 16 L14 22 L24 10' stroke='%23ffffff' stroke-width='3' fill='none' stroke-linecap='round'/></svg>">
+</head>
+
+<body>
+
+    <!-- Barra de progreso de lectura en scroll -->
+    <div id="barra-progreso-scroll" class="barra-progreso-scroll" aria-hidden="true"></div>
+
+    <header>
+        <a href="index.html" class="area-logo" aria-label="Ir al inicio de AlgoSchool DSA" title="AlgoSchool DSA - Algoritmos & Estructuras de Datos">
+            <svg class="imagen-logo" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect width="36" height="36" rx="8" fill="#0f172a" />
+                <path d="M18 7L8 12.5L18 18L28 12.5L18 7Z" stroke="#ffffff" stroke-width="2" stroke-linejoin="round" />
+                <path d="M8 18L18 23.5L28 18" stroke="#0070f3" stroke-width="2.2" stroke-linejoin="round" />
+                <path d="M8 23.5L18 29L28 23.5" stroke="#38bdf8" stroke-width="2.2" stroke-linejoin="round" />
+                <circle cx="18" cy="18" r="2.5" fill="#00dfd8" />
+            </svg>
+            <h1 class="logo-texto">AlgoSchool <span class="logo-dsa">DSA</span></h1>
+        </a>
+
+        <!-- Menu -->
+        <nav id="menu-navegacion" aria-label="Navegación principal">
+            <ul class="menu-principal">
+                <!-- Inicio -->
+                <li class="elemento-menu">
+                    <a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a>
+                </li>
+
+                <!-- Ruta con submenu -->
+                <li class="elemento-menu">
+                    <a href="ruta.html">
+                        <i class="fa-solid fa-route"></i> Ruta DSA <i class="fa-solid fa-chevron-down indicador-flecha"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="ruta.html#nivel-1"><i class="fa-solid fa-circle-dot" style="color: #0070f3;"></i> Nivel 1: Básicos</a></li>
+                        <li><a href="ruta.html#nivel-2"><i class="fa-solid fa-circle-dot" style="color: #f59e0b;"></i> Nivel 2: Intermedios</a></li>
+                        <li><a href="ruta.html#nivel-3"><i class="fa-solid fa-circle-dot" style="color: #ef4444;"></i> Nivel 3: Avanzados</a></li>
+                    </ul>
+                </li>
+
+                <!-- Complejidad con submenu -->
+                <li class="elemento-menu">
+                    <a href="complejidad.html" class="activo">
+                        <i class="fa-solid fa-chart-line"></i> Complejidad <i class="fa-solid fa-chevron-down indicador-flecha"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="complejidad.html#tablas"><i class="fa-solid fa-chart-pie"></i> Notación Big O</a></li>
+                        <li><a href="complejidad.html#categorias"><i class="fa-solid fa-list-ol"></i> Categorías de Algoritmos</a></li>
+                        <li><a href="complejidad.html#ejemplos-codigo"><i class="fa-solid fa-code"></i> Ejemplos en Código</a></li>
+                    </ul>
+                </li>
+
+                <!-- Recursos con submenu -->
+                <li class="elemento-menu">
+                    <a href="recursos.html">
+                        <i class="fa-solid fa-book-bookmark"></i> Recursos <i class="fa-solid fa-chevron-down indicador-flecha"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="recursos.html#simuladores"><i class="fa-solid fa-eye"></i> Simuladores Visuales</a></li>
+                        <li><a href="recursos.html#practicar"><i class="fa-solid fa-trophy"></i> Desafíos de Código</a></li>
+                        <li><a href="recursos.html#libros"><i class="fa-solid fa-book-open"></i> Libros Recomendados</a></li>
+                        <li><a href="recursos.html#multimedia"><i class="fa-solid fa-photo-film"></i> Recursos Multimedia</a></li>
+                    </ul>
+                </li>
+
+                <!-- Ayuda con submenu -->
+                <li class="elemento-menu">
+                    <a href="soporte.html">
+                        <i class="fa-solid fa-circle-question"></i> Soporte <i class="fa-solid fa-chevron-down indicador-flecha"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="soporte.html#ayuda"><i class="fa-solid fa-circle-info"></i> Centro de Preguntas FAQ</a></li>
+                        <li><a href="soporte.html#sugerencias"><i class="fa-solid fa-paper-plane"></i> Formulario de Sugerencias</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="header-acciones">
+            <button id="boton-tema" class="boton-tema" aria-label="Cambiar tema" title="Cambiar tema">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <button type="button" id="boton-menu-movil" class="boton-menu-movil" aria-label="Abrir menú de navegación" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Banner educativo de la pagina -->
+        <section class="banner-pagina" aria-label="Banner de Complejidad Asintótica">
+            <div class="portada-rejilla">
+                <div class="portada-contenido">
+                    <span class="portada-etiqueta">
+                        <i class="fa-solid fa-chart-line"></i> Eficiencia Computacional & Algoritmos
+                    </span>
+                    <h2 class="portada-titulo">
+                        Notación Big O y Análisis Asintótico
+                    </h2>
+                    <p class="portada-descripcion">
+                        Comprende cómo escala tu software conforme crece el volumen de datos de entrada. Domina cotas de tiempo y espacio en memoria RAM, consulta las tablas comparativas y analiza implementaciones en código real.
+                    </p>
+                    <div class="portada-acciones">
+                        <a href="#tablas" class="boton-primario">
+                            <i class="fa-solid fa-table-list"></i> Ver Tablas Comparativas
+                        </a>
+                        <a href="#ejemplos-codigo" class="boton-secundario">
+                            <i class="fa-solid fa-code"></i> Ejemplos en Código
+                        </a>
+                    </div>
+                </div>
+
+                <div class="portada-vector-contenedor">
+                    <img src="./assets/img/vectores/vector_complejidad.svg" alt="Gráfica de curvas de complejidad Big O" class="portada-vector-svg" width="380" height="280" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Notacion big o y tablas comparativas -->
+        <section id="tablas">
+            <h2><i class="fa-solid fa-chart-line"></i> Complejidad Asintótica Notación Big O</h2>
+            <div class="concepto-explicativo">
+                <strong>¿Qué mide la Notación Big O?</strong>
+                <p>
+                    Evalúa la tasa de crecimiento del tiempo de ejecución o consumo de memoria RAM conforme el volumen de datos de entrada <code>N</code>
+                    tiende al infinito. Se enfoca en el peor escenario posible (Worst Case) para garantizar cotas superiores fiables de rendimiento.
+                </p>
+            </div>
+
+            <h3>1. Complejidad en Operaciones de Estructuras de Datos</h3>
+            <div class="contenedor-tabla-responsiva">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Estructura de Datos</th>
+                            <th>Acceso</th>
+                            <th>Búsqueda</th>
+                            <th>Inserción</th>
+                            <th>Eliminación</th>
+                            <th>Referencia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong><i class="fa-solid fa-layer-group"></i> Arreglo (Array)</strong></td>
+                            <td><code class="bigo-codigo bigo-excelente">O(1)</code></td>
+                            <td><code class="bigo-codigo bigo-bueno">O(n)</code></td>
+                            <td><code class="bigo-codigo bigo-bueno">O(n)</code></td>
+                            <td><code class="bigo-codigo bigo-bueno">O(n)</code></td>
+                            <td>
+                                <button type="button" class="boton-enlace enlace-ficha btn-modal-complejidad" data-estructura="arreglo">
+                                    <i class="fa-solid fa-circle-question"></i> ¿Por qué?
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong><i class="fa-solid fa-link"></i> Lista Enlazada</strong></td>
+                            <td><code class="bigo-codigo bigo-bueno">O(n)</code></td>
+                            <td><code class="bigo-codigo bigo-bueno">O(n)</code></td>
+                            <td><code class="bigo-codigo bigo-excelente">O(1)</code></td>
+                            <td><code class="bigo-codigo bigo-excelente">O(1)</code></td>
+                            <td>
+                                <button type="button" class="boton-enlace enlace-ficha btn-modal-complejidad" data-estructura="lista">
+                                    <i class="fa-solid fa-circle-question"></i> ¿Por qué?
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong><i class="fa-solid fa-cubes-stacked"></i> Pila (Stack) / Cola</strong></td>
+                            <td><code class="bigo-codigo bigo-bueno">O(n)</code></td>
+                            <td><code class="bigo-codigo bigo-bueno">O(n)</code></td>
+                            <td><code class="bigo-codigo bigo-excelente">O(1)</code></td>
+                            <td><code class="bigo-codigo bigo-excelente">O(1)</code></td>
+                            <td>
+                                <button type="button" class="boton-enlace enlace-ficha btn-modal-complejidad" data-estructura="pila_cola">
+                                    <i class="fa-solid fa-circle-question"></i> ¿Por qué?
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong><i class="fa-solid fa-hashtag"></i> Tabla Hash</strong></td>
+                            <td><code class="bigo-codigo">N/A</code></td>
+                            <td><code class="bigo-codigo bigo-excelente">O(1)</code></td>
+                            <td><code class="bigo-codigo bigo-excelente">O(1)</code></td>
+                            <td><code class="bigo-codigo bigo-excelente">O(1)</code></td>
+                            <td>
+                                <button type="button" class="boton-enlace enlace-ficha btn-modal-complejidad" data-estructura="hash">
+                                    <i class="fa-solid fa-circle-question"></i> ¿Por qué?
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong><i class="fa-solid fa-sitemap"></i> Árbol BST Balanceado</strong></td>
+                            <td><code class="bigo-codigo bigo-bueno">O(log n)</code></td>
+                            <td><code class="bigo-codigo bigo-bueno">O(log n)</code></td>
+                            <td><code class="bigo-codigo bigo-bueno">O(log n)</code></td>
+                            <td><code class="bigo-codigo bigo-bueno">O(log n)</code></td>
+                            <td>
+                                <button type="button" class="boton-enlace enlace-ficha btn-modal-complejidad" data-estructura="bst">
+                                    <i class="fa-solid fa-circle-question"></i> ¿Por qué?
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="contenedor-cargar-mas">
+                <a href="https://www.bigocheatsheet.com" target="_blank" class="boton-cargar-mas">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Consultar Big O Cheat Sheet Oficial
+                </a>
+            </div>
+        </section>
+
+        <!-- Comparador Frente a Frente de Estructuras -->
+        <section id="comparador" class="seccion-comparador-estructuras">
+            <div class="seccion-cabecera-con-descripcion">
+                <h2><i class="fa-solid fa-code-compare"></i> Comparador «Frente a Frente» en Memoria RAM</h2>
+                <p>Compara dos estructuras de datos en una operación específica para ver el impacto asintótico y de arquitectura en memoria:</p>
+            </div>
+
+            <div class="tarjeta-comparador-interactivo">
+                <div class="controles-comparador-fila">
+                    <div class="control-comparador-grupo">
+                        <label for="comp-estructura-1"><i class="fa-solid fa-cube"></i> Estructura A:</label>
+                        <select id="comp-estructura-1" class="select-comparador">
+                            <option value="arreglo" selected>Arreglo Contiguo (Array)</option>
+                            <option value="lista">Lista Enlazada (Linked List)</option>
+                            <option value="pila_cola">Pila / Cola (Stack / Queue)</option>
+                            <option value="hash">Tabla Hash (Hash Map)</option>
+                            <option value="bst">Árbol BST Balanceado</option>
+                        </select>
+                    </div>
+
+                    <div class="control-comparador-grupo">
+                        <label for="comp-operacion"><i class="fa-solid fa-bolt"></i> Operación Evaluada:</label>
+                        <select id="comp-operacion" class="select-comparador">
+                            <option value="acceso" selected>Acceso por Índice [i]</option>
+                            <option value="busqueda">Búsqueda de Elemento</option>
+                            <option value="insercion_inicio">Inserción al Inicio (Prepend)</option>
+                            <option value="insercion_final">Inserción al Final (Append)</option>
+                            <option value="eliminacion">Eliminación en Medio</option>
+                        </select>
+                    </div>
+
+                    <div class="control-comparador-grupo">
+                        <label for="comp-estructura-2"><i class="fa-solid fa-cube"></i> Estructura B:</label>
+                        <select id="comp-estructura-2" class="select-comparador">
+                            <option value="lista" selected>Lista Enlazada (Linked List)</option>
+                            <option value="arreglo">Arreglo Contiguo (Array)</option>
+                            <option value="pila_cola">Pila / Cola (Stack / Queue)</option>
+                            <option value="hash">Tabla Hash (Hash Map)</option>
+                            <option value="bst">Árbol BST Balanceado</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="resultado-comparador-rejilla" id="resultado-comparador-rejilla">
+                    <!-- Inyectado dinámicamente por JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Clasificación y Categorías de Algoritmos -->
+        <section id="categorias">
+            <div class="seccion-cabecera-con-descripcion">
+                <h2><i class="fa-solid fa-layer-group"></i> Clasificación y Categorías de Algoritmos</h2>
+                <p>En el desarrollo de software profesional, los algoritmos se clasifican según su modelo mental y estrategia de resolución. Seleccionar la categoría adecuada determina la escalabilidad y consumo de memoria de cualquier solución en producción.</p>
+            </div>
+
+            <!-- Rejilla de Cards de Categorías -->
+            <div class="rejilla-categorias-algoritmos">
+                <!-- Card 1: Búsqueda -->
+                <article class="tarjeta-categoria-algoritmo">
+                    <div class="cabecera-tarjeta-categoria">
+                        <div class="icono-categoria-caja">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <div class="titulos-categoria">
+                            <h3>Algoritmos de Búsqueda</h3>
+                            <span class="subtitulo-categoria">Paradigma de Localización</span>
+                        </div>
+                        <code class="bigo-codigo bigo-excelente">O(log n)</code>
+                    </div>
+
+                    <p class="descripcion-categoria">
+                        Reducen sistemáticamente el espacio de búsqueda descartando mitades completas de datos donde la solución no puede encontrarse.
+                    </p>
+
+                    <div class="categoria-datos-clave">
+                        <p><strong>Ejemplos:</strong> Búsqueda Binaria, Ternaria y Exponencial.</p>
+                        <p><strong>En producción:</strong> Índices B-Tree en bases de datos y <code>git bisect</code>.</p>
+                    </div>
+
+                    <div class="pie-tarjeta-categoria">
+                        <a href="ruta.html#nivel-1" class="boton-enlace-categoria">
+                            Ver temas en la Ruta <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 2: Ordenamiento -->
+                <article class="tarjeta-categoria-algoritmo">
+                    <div class="cabecera-tarjeta-categoria">
+                        <div class="icono-categoria-caja">
+                            <i class="fa-solid fa-arrow-down-short-wide"></i>
+                        </div>
+                        <div class="titulos-categoria">
+                            <h3>Algoritmos de Ordenamiento</h3>
+                            <span class="subtitulo-categoria">Reorganización de Memoria</span>
+                        </div>
+                        <code class="bigo-codigo bigo-bueno">O(n log n)</code>
+                    </div>
+
+                    <p class="descripcion-categoria">
+                        Disponen los elementos en secuencia estrictamente monótona, facilitando búsquedas instantáneas y agregación eficiente.
+                    </p>
+
+                    <div class="categoria-datos-clave">
+                        <p><strong>Ejemplos:</strong> QuickSort, MergeSort, HeapSort y TimSort.</p>
+                        <p><strong>En producción:</strong> Cláusulas <code>ORDER BY</code> en SQL y feeds en redes sociales.</p>
+                    </div>
+
+                    <div class="pie-tarjeta-categoria">
+                        <a href="ruta.html#nivel-2" class="boton-enlace-categoria">
+                            Ver temas en la Ruta <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 3: Grafos & Rutas -->
+                <article class="tarjeta-categoria-algoritmo">
+                    <div class="cabecera-tarjeta-categoria">
+                        <div class="icono-categoria-caja">
+                            <i class="fa-solid fa-route"></i>
+                        </div>
+                        <div class="titulos-categoria">
+                            <h3>Grafos y Enrutamiento</h3>
+                            <span class="subtitulo-categoria">Redes y Topología</span>
+                        </div>
+                        <code class="bigo-codigo bigo-bueno">O(V + E)</code>
+                    </div>
+
+                    <p class="descripcion-categoria">
+                        Modelan entidades conectadas para calcular trayectos mínimos, componentes conexas y dependencias de ejecución.
+                    </p>
+
+                    <div class="categoria-datos-clave">
+                        <p><strong>Ejemplos:</strong> Dijkstra, BFS, DFS y Algoritmo A*.</p>
+                        <p><strong>En producción:</strong> Navegación en Google Maps y enrutamiento IP (OSPF).</p>
+                    </div>
+
+                    <div class="pie-tarjeta-categoria">
+                        <a href="ruta.html#nivel-2" class="boton-enlace-categoria">
+                            Ver temas en la Ruta <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 4: Programación Dinámica -->
+                <article class="tarjeta-categoria-algoritmo">
+                    <div class="cabecera-tarjeta-categoria">
+                        <div class="icono-categoria-caja">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <div class="titulos-categoria">
+                            <h3>Programación Dinámica</h3>
+                            <span class="subtitulo-categoria">Optimización & Memoización</span>
+                        </div>
+                        <code class="bigo-codigo bigo-regular">O(n · W)</code>
+                    </div>
+
+                    <p class="descripcion-categoria">
+                        Descompone problemas complejos en subproblemas superpuestos y memoriza sus soluciones para erradicar el recálculo exponencial.
+                    </p>
+
+                    <div class="categoria-datos-clave">
+                        <p><strong>Ejemplos:</strong> Problema de la Mochila (Knapsack), LCS y Levenshtein.</p>
+                        <p><strong>En producción:</strong> Diferencias de código en <code>git diff</code> y alineación de ADN.</p>
+                    </div>
+
+                    <div class="pie-tarjeta-categoria">
+                        <a href="ruta.html#nivel-3" class="boton-enlace-categoria">
+                            Ver temas en la Ruta <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 5: Tablas Hash & Criptografía -->
+                <article class="tarjeta-categoria-algoritmo">
+                    <div class="cabecera-tarjeta-categoria">
+                        <div class="icono-categoria-caja">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div class="titulos-categoria">
+                            <h3>Hashing y Criptografía</h3>
+                            <span class="subtitulo-categoria">Dispersión y Acceso Directo</span>
+                        </div>
+                        <code class="bigo-codigo bigo-excelente">O(1)</code>
+                    </div>
+
+                    <p class="descripcion-categoria">
+                        Transforman llaves arbitrarias en direcciones de memoria contiguas para ofrecer consultas y verificaciones en tiempo constante.
+                    </p>
+
+                    <div class="categoria-datos-clave">
+                        <p><strong>Ejemplos:</strong> Tablas Hash, SHA-256, HMAC y Bloom Filters.</p>
+                        <p><strong>En producción:</strong> Caché distribuida (Redis/Memcached) y validación en Blockchain.</p>
+                    </div>
+
+                    <div class="pie-tarjeta-categoria">
+                        <a href="ruta.html#nivel-1" class="boton-enlace-categoria">
+                            Ver temas en la Ruta <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 6: Divide y Vencerás -->
+                <article class="tarjeta-categoria-algoritmo">
+                    <div class="cabecera-tarjeta-categoria">
+                        <div class="icono-categoria-caja">
+                            <i class="fa-solid fa-diagram-project"></i>
+                        </div>
+                        <div class="titulos-categoria">
+                            <h3>Divide y Vencerás</h3>
+                            <span class="subtitulo-categoria">Partición Recursiva</span>
+                        </div>
+                        <code class="bigo-codigo bigo-bueno">O(n log n)</code>
+                    </div>
+
+                    <p class="descripcion-categoria">
+                        Fragmenta la entrada en subproblemas disjuntos recursivos, resuelve cada uno y recombina los resultados sin solapamiento.
+                    </p>
+
+                    <div class="categoria-datos-clave">
+                        <p><strong>Ejemplos:</strong> MergeSort, Multiplicación Karatsuba y FFT.</p>
+                        <p><strong>En producción:</strong> Compresión de audio/imagen (MP3, JPEG) y renderizado 3D.</p>
+                    </div>
+
+                    <div class="pie-tarjeta-categoria">
+                        <a href="ruta.html#nivel-3" class="boton-enlace-categoria">
+                            Ver temas en la Ruta <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Ejemplos de codigo -->
+        <section id="ejemplos-codigo">
+            <h2><i class="fa-solid fa-code"></i> Implementaciones de Algoritmos en Código</h2>
+            <div class="concepto-explicativo">
+                <strong>¿Cómo analizar el código de un algoritmo?</strong>
+                <p>Presta atención al avance de los punteros índice, la condición de invariante de bucle y el número de comparaciones ejecutadas. Selecciona tu lenguaje de programación preferido:</p>
+            </div>
+
+            <!-- Código 1: Búsqueda Binaria con pestañas de lenguaje -->
+            <div class="tarjeta-codigo-multilenguaje">
+                <div class="cabecera-codigo-multilenguaje">
+                    <h3>1. Algoritmo de Búsqueda Binaria <code>O(log n)</code></h3>
+                    <div class="pestanas-lenguaje-grupo" role="tablist" aria-label="Lenguajes de programación para Búsqueda Binaria">
+                        <button type="button" class="btn-pestana-lang activa" data-snippet="binaria" data-lang="js" role="tab" aria-selected="true"><i class="fa-brands fa-js"></i> JavaScript</button>
+                        <button type="button" class="btn-pestana-lang" data-snippet="binaria" data-lang="python" role="tab" aria-selected="false"><i class="fa-brands fa-python"></i> Python</button>
+                        <button type="button" class="btn-pestana-lang" data-snippet="binaria" data-lang="cpp" role="tab" aria-selected="false"><i class="fa-solid fa-file-code"></i> C++</button>
+                    </div>
+                </div>
+
+                <div class="bloque-codigo-contenedor">
+                    <div class="bloque-codigo-cabecera">
+                        <div class="bloque-codigo-lenguaje" id="etiqueta-lang-binaria"><i class="fa-brands fa-js"></i> JavaScript ES6 — Búsqueda Binaria</div>
+                        <button type="button" class="boton-copiar-codigo" aria-label="Copiar código al portapapeles">
+                            <i class="fa-regular fa-copy"></i> Copiar código
+                        </button>
+                    </div>
+                    <pre class="bloque-codigo"><code id="codigo-binaria">// Búsqueda Binaria en JavaScript ES6 - Complejidad O(log n)
+function busquedaBinaria(arreglo, objetivo) {
+    let inicio = 0;
+    let fin = arreglo.length - 1;
+
+    while (inicio &lt;= fin) {
+        let medio = Math.floor((inicio + fin) / 2);
+
+        if (arreglo[medio] === objetivo) {
+            return medio; // Localizado en índice medio
+        }
+        if (arreglo[medio] &lt; objetivo) {
+            inicio = medio + 1; // Descartar mitad izquierda
+        } else {
+            fin = medio - 1;    // Descartar mitad derecha
+        }
+    }
+    return -1; // Elemento no presente
+}</code></pre>
+                </div>
+            </div>
+
+            <!-- Código 2: Bubble Sort con pestañas de lenguaje -->
+            <div class="tarjeta-codigo-multilenguaje">
+                <div class="cabecera-codigo-multilenguaje">
+                    <h3>2. Algoritmo de Ordenamiento por Burbuja <code>O(n²)</code></h3>
+                    <div class="pestanas-lenguaje-grupo" role="tablist" aria-label="Lenguajes de programación para Bubble Sort">
+                        <button type="button" class="btn-pestana-lang activa" data-snippet="burbuja" data-lang="js" role="tab" aria-selected="true"><i class="fa-brands fa-js"></i> JavaScript</button>
+                        <button type="button" class="btn-pestana-lang" data-snippet="burbuja" data-lang="python" role="tab" aria-selected="false"><i class="fa-brands fa-python"></i> Python</button>
+                        <button type="button" class="btn-pestana-lang" data-snippet="burbuja" data-lang="cpp" role="tab" aria-selected="false"><i class="fa-solid fa-file-code"></i> C++</button>
+                    </div>
+                </div>
+
+                <div class="bloque-codigo-contenedor">
+                    <div class="bloque-codigo-cabecera">
+                        <div class="bloque-codigo-lenguaje" id="etiqueta-lang-burbuja"><i class="fa-brands fa-js"></i> JavaScript ES6 — Ordenamiento por Burbuja</div>
+                        <button type="button" class="boton-copiar-codigo" aria-label="Copiar código al portapapeles">
+                            <i class="fa-regular fa-copy"></i> Copiar código
+                        </button>
+                    </div>
+                    <pre class="bloque-codigo"><code id="codigo-burbuja">// Ordenamiento por Burbuja en JavaScript ES6 - Complejidad O(n²)
+function ordenamientoBurbuja(arreglo) {
+    let n = arreglo.length;
+    for (let i = 0; i &lt; n - 1; i++) {
+        for (let j = 0; j &lt; n - i - 1; j++) {
+            if (arreglo[j] &gt; arreglo[j + 1]) {
+                // Intercambio de valores adyacentes
+                let temporal = arreglo[j];
+                arreglo[j] = arreglo[j + 1];
+                arreglo[j + 1] = temporal;
+            }
+        }
+    }
+    return arreglo;
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal Explicativo de Complejidad Asintótica -->
+        <div id="modal-detalle-complejidad" class="modal-superposicion" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-complejidad-titulo">
+            <div class="modal-contenedor">
+                <div class="modal-cabecera">
+                    <h3 id="modal-complejidad-titulo" class="modal-titulo">
+                        <i class="fa-solid fa-chart-line"></i> Análisis de Complejidad
+                    </h3>
+                    <button type="button" class="modal-boton-cerrar" data-cerrar-modal aria-label="Cerrar modal">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="modal-cuerpo" id="modal-complejidad-cuerpo">
+                    <!-- Contenido dinámico inyectado por JS -->
+                </div>
+                <div class="modal-pie">
+                    <a id="modal-complejidad-wiki" href="#" target="_blank" class="boton-secundario">
+                        <i class="fa-brands fa-wikipedia-w"></i> Documentación
+                    </a>
+                    <button type="button" class="boton-primario" data-cerrar-modal>Entendido</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="pie-rejilla">
+            <div class="columna-pie">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                    <img src="./assets/img/logo_taller.png" alt="Logo Taller de Programación Web" style="height: 38px; width: auto; object-fit: contain; border-radius: 6px; background: #fff; padding: 2px;" loading="lazy">
+                    <h4 style="margin: 0;">AlgoSchool DSA</h4>
+                </div>
+                <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">
+                    Portal educativo desarrollado para el curso de <strong>Taller de Programación Web (PC2)</strong>.
+                </p>
+                <div style="display: flex; gap: 10px; font-size: 18px; color: var(--text-secondary);">
+                    <a href="https://github.com" target="_blank" aria-label="GitHub" style="color: inherit;"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://developer.mozilla.org" target="_blank" aria-label="MDN Web Docs" style="color: inherit;"><i class="fa-brands fa-firefox-browser"></i></a>
+                    <a href="https://w3schools.com" target="_blank" aria-label="W3Schools" style="color: inherit;"><i class="fa-solid fa-graduation-cap"></i></a>
+                </div>
+            </div>
+
+            <div class="columna-pie">
+                <h4>Rutas y Complejidad</h4>
+                <ul>
+                    <li><a href="ruta.html#nivel-1"><i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i> Nivel 1: Conceptos Básicos</a></li>
+                    <li><a href="ruta.html#nivel-2"><i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i> Nivel 2: Intermedios</a></li>
+                    <li><a href="ruta.html#nivel-3"><i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i> Nivel 3: Avanzados</a></li>
+                    <li><a href="complejidad.html#tablas"><i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i> Notación Big O</a></li>
+                    <li><a href="complejidad.html#categorias"><i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i> Categorías de Algoritmos</a></li>
+                </ul>
+            </div>
+
+            <div class="columna-pie">
+                <h4>Recursos y Soporte</h4>
+                <ul>
+                    <li><a href="recursos.html#simuladores"><i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i> Simuladores Visuales</a></li>
+                    <li><a href="recursos.html#practicar"><i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i> Desafíos de Código</a></li>
+                    <li><a href="recursos.html#libros"><i class="fa-solid fa-book-open"></i> Libros Recomendados</a></li>
+                    <li><a href="recursos.html#multimedia"><i class="fa-solid fa-photo-film"></i> Recursos Multimedia</a></li>
+                    <li><a href="soporte.html#ayuda"><i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i> Centro de Ayuda FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pie-inferior">
+            <p>&copy; 2026 <strong>AlgoSchool DSA</strong></p>
+            <p>Estructuras de Datos y Algoritmos</p>
+        </div>
+    </footer>
+
+    <!-- Boton flotante volver arriba -->
+    <button id="boton-volver-arriba" class="boton-volver-arriba" aria-label="Volver al inicio" title="Volver al inicio">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts de interactividad -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

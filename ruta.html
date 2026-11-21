@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ruta de Aprendizaje AlgoSchool DSA - Niveles básico, intermedio y avanzado en Estructuras de Datos y Algoritmos.">
+    <title>AlgoSchool DSA - Ruta de Aprendizaje por Niveles</title>
+
+    <!-- Fuentes Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Icono en svg -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230070f3'/><path d='M8 16 L14 22 L24 10' stroke='%23ffffff' stroke-width='3' fill='none' stroke-linecap='round'/></svg>">
+</head>
+
+<body>
+
+    <!-- Barra de progreso de lectura en scroll -->
+    <div id="barra-progreso-scroll" class="barra-progreso-scroll" aria-hidden="true"></div>
+
+    <header>
+        <a href="index.html" class="area-logo" aria-label="Ir al inicio de AlgoSchool DSA" title="AlgoSchool DSA - Algoritmos & Estructuras de Datos">
+            <svg class="imagen-logo" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect width="36" height="36" rx="8" fill="#0f172a" />
+                <path d="M18 7L8 12.5L18 18L28 12.5L18 7Z" stroke="#ffffff" stroke-width="2" stroke-linejoin="round" />
+                <path d="M8 18L18 23.5L28 18" stroke="#0070f3" stroke-width="2.2" stroke-linejoin="round" />
+                <path d="M8 23.5L18 29L28 23.5" stroke="#38bdf8" stroke-width="2.2" stroke-linejoin="round" />
+                <circle cx="18" cy="18" r="2.5" fill="#00dfd8" />
+            </svg>
+            <h1 class="logo-texto">AlgoSchool <span class="logo-dsa">DSA</span></h1>
+        </a>
+
+        <!-- Menu -->
+        <nav id="menu-navegacion" aria-label="Navegación principal">
+            <ul class="menu-principal">
+                <!-- Inicio -->
+                <li class="elemento-menu">
+                    <a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a>
+                </li>
+
+                <!-- Ruta con submenu -->
+                <li class="elemento-menu">
+                    <a href="ruta.html" class="activo">
+                        <i class="fa-solid fa-route"></i> Ruta DSA <i class="fa-solid fa-chevron-down indicador-flecha"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="ruta.html#nivel-1"><i class="fa-solid fa-circle-dot" style="color: #0070f3;"></i> Nivel 1: Básicos</a></li>
+                        <li><a href="ruta.html#nivel-2"><i class="fa-solid fa-circle-dot" style="color: #f59e0b;"></i> Nivel 2: Intermedios</a></li>
+                        <li><a href="ruta.html#nivel-3"><i class="fa-solid fa-circle-dot" style="color: #ef4444;"></i> Nivel 3: Avanzados</a></li>
+                    </ul>
+                </li>
+
+                <!-- Complejidad con submenu -->
+                <li class="elemento-menu">
+                    <a href="complejidad.html">
+                        <i class="fa-solid fa-chart-line"></i> Complejidad <i class="fa-solid fa-chevron-down indicador-flecha"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="complejidad.html#tablas"><i class="fa-solid fa-chart-pie"></i> Notación Big O</a></li>
+                        <li><a href="complejidad.html#categorias"><i class="fa-solid fa-list-ol"></i> Categorías de Algoritmos</a></li>
+                        <li><a href="complejidad.html#ejemplos-codigo"><i class="fa-solid fa-code"></i> Ejemplos en Código</a></li>
+                    </ul>
+                </li>
+
+                <!-- Recursos con submenu -->
+                <li class="elemento-menu">
+                    <a href="recursos.html">
+                        <i class="fa-solid fa-book-bookmark"></i> Recursos <i class="fa-solid fa-chevron-down indicador-flecha"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="recursos.html#simuladores"><i class="fa-solid fa-eye"></i> Simuladores Visuales</a></li>
+                        <li><a href="recursos.html#practicar"><i class="fa-solid fa-trophy"></i> Desafíos de Código</a></li>
+                        <li><a href="recursos.html#libros"><i class="fa-solid fa-book-open"></i> Libros Recomendados</a></li>
+                        <li><a href="recursos.html#multimedia"><i class="fa-solid fa-photo-film"></i> Recursos Multimedia</a></li>
+                    </ul>
+                </li>
+
+                <!-- Ayuda con submenu -->
+                <li class="elemento-menu">
+                    <a href="soporte.html">
+                        <i class="fa-solid fa-circle-question"></i> Soporte <i class="fa-solid fa-chevron-down indicador-flecha"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="soporte.html#ayuda"><i class="fa-solid fa-circle-info"></i> Centro de Preguntas FAQ</a></li>
+                        <li><a href="soporte.html#sugerencias"><i class="fa-solid fa-paper-plane"></i> Formulario de Sugerencias</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="header-acciones">
+            <button id="boton-tema" class="boton-tema" aria-label="Cambiar tema" title="Cambiar tema">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <button type="button" id="boton-menu-movil" class="boton-menu-movil" aria-label="Abrir menú de navegación" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Banner educativo de la pagina -->
+        <section class="banner-pagina" aria-label="Banner de Ruta de Aprendizaje">
+            <div class="portada-rejilla">
+                <div class="portada-contenido">
+                    <span class="portada-etiqueta">
+                        <i class="fa-solid fa-graduation-cap"></i> Currículo Académico DSA
+                    </span>
+                    <h2 class="portada-titulo">
+                        Ruta de Aprendizaje en Estructuras de Datos
+                    </h2>
+                    <p class="portada-descripcion">
+                        Domina el camino progresivo estructurado en tres fases: desde estructuras lineales fundamentales hasta algoritmos avanzados de grafos y optimización. Explora cada tarjeta y filtra contenidos al instante con el buscador en vivo.
+                    </p>
+                    <div class="portada-acciones">
+                        <a href="#nivel-1" class="boton-primario">
+                            <i class="fa-solid fa-play"></i> Iniciar Fase 1: Básicos
+                        </a>
+                        <a href="#buscador-temas" class="boton-secundario">
+                            <i class="fa-solid fa-magnifying-glass"></i> Filtrar Temas
+                        </a>
+                    </div>
+                </div>
+
+                <div class="portada-vector-contenedor">
+                    <img src="./assets/img/vectores/vector_ruta.svg" alt="Ilustración del camino de aprendizaje DSA" class="portada-vector-svg" width="380" height="260" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Ruta de aprendizaje -->
+        <section id="ruta">
+            <!-- Widget de Progreso del Estudiante -->
+            <div class="tarjeta-progreso-estudiante" id="widget-progreso-estudiante">
+                <div class="cabecera-progreso-estudiante">
+                    <div class="info-progreso-texto">
+                        <span class="subtitulo-progreso"><i class="fa-solid fa-graduation-cap"></i> Tu Progreso en la Ruta</span>
+                        <h3 id="texto-resumen-progreso">0 de 12 temas completados (0%)</h3>
+                    </div>
+                    <button type="button" id="btn-reiniciar-progreso" class="boton-reiniciar-progreso" title="Reiniciar tu avance guardado">
+                        <i class="fa-solid fa-rotate-left"></i> Reiniciar
+                    </button>
+                </div>
+                <div class="barra-progreso-pista" role="progressbar" aria-label="Progreso de la ruta" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0">
+                    <div class="barra-progreso-fill" id="barra-progreso-fill" style="width: 0%;"></div>
+                </div>
+            </div>
+
+            <!-- Barra de Búsqueda y Filtros de la Ruta -->
+            <div class="controles-ruta" aria-label="Controles de búsqueda y filtrado de temas">
+                <div class="controles-ruta-fila-superior">
+                    <div class="buscador-ruta-contenedor">
+                        <i class="fa-solid fa-magnifying-glass icono-busqueda"></i>
+                        <input type="text" id="buscador-temas" class="input-buscador-ruta" placeholder="Buscar por tema o algoritmo (ej. BST, Quicksort, Hash, Recursión)..." aria-label="Buscar tema o algoritmo">
+                        <button type="button" id="limpiar-buscador" class="boton-limpiar-busqueda" aria-label="Limpiar búsqueda" style="display: none;">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+
+                    <div id="contador-resultados-ruta" class="contador-resultados-ruta" aria-live="polite">
+                        Mostrando <strong>12</strong> de 12 temas
+                    </div>
+                </div>
+
+                <div class="filtros-nivel-grupo" role="group" aria-label="Filtrar por nivel de dificultad">
+                    <button type="button" class="boton-filtro-nivel activo" data-filtro="todos">Todos (12)</button>
+                    <button type="button" class="boton-filtro-nivel" data-filtro="1">Nivel 1: Básicos</button>
+                    <button type="button" class="boton-filtro-nivel" data-filtro="2">Nivel 2: Intermedios</button>
+                    <button type="button" class="boton-filtro-nivel" data-filtro="3">Nivel 3: Avanzados</button>
+                </div>
+            </div>
+
+            <div id="mensaje-sin-resultados" class="mensaje-sin-resultados" style="display: none;">
+                <i class="fa-solid fa-filter-circle-xmark"></i>
+                <p>No se encontraron temas que coincidan con "<span id="termino-busqueda-vacio"></span>".</p>
+                <button type="button" id="boton-restablecer-filtros" class="boton-primario">
+                    <i class="fa-solid fa-rotate-left"></i> Restablecer filtros
+                </button>
+            </div>
+
+            <!-- NIVEL 1 -->
+            <div id="nivel-1" class="bloque-nivel">
+                <div class="cabecera-nivel nivel-1">
+                    <h3 class="titulo-modulo-nivel">Nivel 1: Conceptos Básicos y Estructuras Lineales</h3>
+                    <p class="descripcion-modulo-nivel">Fundamentos de memoria contigua vs. dinámica, direccionamiento por punteros y pila recursiva.</p>
+                </div>
+
+                <div class="contenedor-tarjetas">
+                    <article class="tarjeta" data-tema-id="arreglos" data-patron="punteros">
+                        <picture>
+                            <source srcset="./assets/img/dsa/arreglos.webp" type="image/webp">
+                            <img src="./assets/img/dsa/arreglos.webp" alt="Arreglos y memoria contigua" loading="lazy" decoding="async">
+                        </picture>
+                        <h3><i class="fa-solid fa-layer-group"></i> Arreglos (Arrays)</h3>
+                        <p>Colección contigua de elementos indexados. Ideal para lecturas ultra rápidas por posición en tiempo constante <code>O(1)</code>.</p>
+                        <div class="enlaces-tarjeta">
+                            <button type="button" class="boton-enlace enlace-ficha" data-tema="arreglos">
+                                <i class="fa-solid fa-file-lines"></i> Ficha
+                            </button>
+                            <a href="https://visualgo.net/es/array" target="_blank" class="boton-enlace enlace-simulador">
+                                <i class="fa-solid fa-play"></i> Simulador
+                            </a>
+                            <button type="button" class="boton-enlace btn-check-tema" data-tema-check="arreglos" title="Marcar como completado">
+                                <i class="fa-regular fa-circle-check"></i> <span class="texto-check">Completar</span>
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta" data-tema-id="strings" data-patron="punteros">
+                        <picture>
+                            <source srcset="./assets/img/dsa/string.png" type="image/png">
+                            <img src="./assets/img/dsa/string.png" alt="Cadenas de texto y caracteres" loading="lazy" decoding="async">
+                        </picture>
+                        <h3><i class="fa-solid fa-font"></i> Cadenas (Strings)</h3>
+                        <p>Secuencias ordenadas de caracteres usadas para procesamiento textual y algoritmos de coincidencia de patrones en <code>O(n)</code>.</p>
+                        <div class="enlaces-tarjeta">
+                            <button type="button" class="boton-enlace enlace-ficha" data-tema="strings">
+                                <i class="fa-solid fa-file-lines"></i> Ficha
+                            </button>
+                            <a href="https://visualgo.net/es/suffixstack" target="_blank" class="boton-enlace enlace-simulador">
+                                <i class="fa-solid fa-play"></i> Simulador
+                            </a>
+                            <button type="button" class="boton-enlace btn-check-tema" data-tema-check="strings" title="Marcar como completado">
+                                <i class="fa-regular fa-circle-check"></i> <span class="texto-check">Completar</span>
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta" data-tema-id="listas" data-patron="punteros">
+                        <picture>
+                            <source srcset="./assets/img/dsa/listas.png" type="image/png">
+                            <img src="./assets/img/dsa/listas.png" alt="Listas enlazadas y punteros en memoria" loading="lazy" decoding="async">
+                        </picture>
+                        <h3><i class="fa-solid fa-link"></i> Listas Enlazadas (Linked Lists)</h3>
+                        <p>Nodos dispersos enlazados por punteros en memoria dinámica con inserción y eliminación veloz en extremos en <code>O(1)</code>.</p>
+                        <div class="enlaces-tarjeta">
+                            <button type="button" class="boton-enlace enlace-ficha" data-tema="listas">
+                                <i class="fa-solid fa-file-lines"></i> Ficha
+                            </button>
+                            <a href="https://visualgo.net/es/list" target="_blank" class="boton-enlace enlace-simulador">
+                                <i class="fa-solid fa-play"></i> Simulador
+                            </a>
+                            <button type="button" class="boton-enlace btn-check-tema" data-tema-check="listas" title="Marcar como completado">
+                                <i class="fa-regular fa-circle-check"></i> <span class="texto-check">Completar</span>
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta" data-tema-id="recursion" data-patron="dp">
+                        <picture>
+                            <source srcset="./assets/img/dsa/recursion.png" type="image/png">
+                            <img src="./assets/img/dsa/recursion.png" alt="Recursividad y pila de llamadas" loading="lazy" decoding="async">
+                        </picture>
+                        <h3><i class="fa-solid fa-arrows-rotate"></i> Recursividad (Recursion)</h3>
+                        <p>Paradigma de descomposición en subproblemas que utiliza la pila de llamadas del sistema (Call Stack) hasta alcanzar el caso base.</p>
+                        <div class="enlaces-tarjeta">
+                            <button type="button" class="boton-enlace enlace-ficha" data-tema="recursion">
+                                <i class="fa-solid fa-file-lines"></i> Ficha
+                            </button>
+                            <a href="https://algorithm-visualizer.org/backtracking/n-queens-problem" target="_blank" class="boton-enlace enlace-simulador">
+                                <i class="fa-solid fa-play"></i> Simulador
+                            </a>
+                            <button type="button" class="boton-enlace btn-check-tema" data-tema-check="recursion" title="Marcar como completado">
+                                <i class="fa-regular fa-circle-check"></i> <span class="texto-check">Completar</span>
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- NIVEL 2 -->
+            <div id="nivel-2" class="bloque-nivel">
+                <div class="cabecera-nivel nivel-2">
+                    <h3 class="titulo-modulo-nivel">Nivel 2: Control de Acceso y Algoritmos Divide & Conquer</h3>
+                    <p class="descripcion-modulo-nivel">Estructuras con restricción de acceso (LIFO/FIFO), ordenamiento eficiente y búsqueda binaria.</p>
+                </div>
+
+                <div class="contenedor-tarjetas">
+                    <article class="tarjeta" data-tema-id="pilas_colas" data-patron="punteros">
+                        <picture>
+                            <source srcset="./assets/img/dsa/pilas_colas.avif" type="image/avif">
+                            <img src="./assets/img/dsa/pilas_colas.avif" alt="Pilas y Colas de datos" loading="lazy" decoding="async">
+                        </picture>
+                        <h3><i class="fa-solid fa-cubes-stacked"></i> Pilas y Colas (Stacks & Queues)</h3>
+                        <p>Estructuras lineales con reglas estrictas de acceso (LIFO y FIFO) con inserción y extracción garantizada en <code>O(1)</code>.</p>
+                        <div class="enlaces-tarjeta">
+                            <button type="button" class="boton-enlace enlace-ficha" data-tema="pilas_colas">
+                                <i class="fa-solid fa-file-lines"></i> Ficha
+                            </button>
+                            <a href="https://visualgo.net/es/stack" target="_blank" class="boton-enlace enlace-simulador">
+                                <i class="fa-solid fa-play"></i> Simulador
+                            </a>
+                            <button type="button" class="boton-enlace btn-check-tema" data-tema-check="pilas_colas" title="Marcar como completado">
+                                <i class="fa-regular fa-circle-check"></i> <span class="texto-check">Completar</span>
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta" data-tema-id="ordenamiento" data-patron="divide">
+                        <picture>
+                            <source srcset="./assets/img/dsa/ordenamiento.webp" type="image/webp">
+                            <img src="./assets/img/dsa/ordenamiento.webp" alt="Algoritmos de ordenamiento" loading="lazy" decoding="async">
+                        </picture>
+                        <h3><i class="fa-solid fa-arrow-down-short-wide"></i> Ordenamiento (Sorting)</h3>
+                        <p>Técnicas avanzadas como QuickSort y MergeSort para clasificar grandes volúmenes con máxima eficiencia asintótica en <code>O(n log n)</code>.</p>
+                        <div class="enlaces-tarjeta">
+                            <button type="button" class="boton-enlace enlace-ficha" data-tema="ordenamiento">
+                                <i class="fa-solid fa-file-lines"></i> Ficha
+                            </button>
+                            <a href="https://algorithm-visualizer.org/divide-and-conquer/quicksort" target="_blank" class="boton-enlace enlace-simulador">
+                                <i class="fa-solid fa-play"></i> Simulador
+                            </a>
+                            <button type="button" class="boton-enlace btn-check-tema" data-tema-check="ordenamiento" title="Marcar como completado">
+                                <i class="fa-regular fa-circle-check"></i> <span class="texto-check">Completar</span>
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta" data-tema-id="busqueda_binaria" data-patron="divide">
+                        <picture>
+                            <source srcset="./assets/img/dsa/busqueda_binaria.webp" type="image/webp">
+                            <img src="./assets/img/dsa/busqueda_binaria.webp" alt="Búsqueda Binaria" loading="lazy" decoding="async">
+                        </picture>
+                        <h3><i class="fa-solid fa-magnifying-glass"></i> Búsqueda Binaria</h3>
+                        <p>Algoritmo de división sucesiva a la mitad sobre arreglos ordenados, reduciendo exponencialmente las comparaciones a <code>O(log n)</code>.</p>
+                        <div class="enlaces-tarjeta">
+                            <button type="button" class="boton-enlace enlace-ficha" data-tema="busqueda_binaria">
+                                <i class="fa-solid fa-file-lines"></i> Ficha
+                            </button>
+                            <a href="https://visualgo.net/es/search" target="_blank" class="boton-enlace enlace-simulador">
+                                <i class="fa-solid fa-play"></i> Simulador
+                            </a>
+                            <button type="button" class="boton-enlace btn-check-tema" data-tema-check="busqueda_binaria" title="Marcar como completado">
+                                <i class="fa-regular fa-circle-check"></i> <span class="texto-check">Completar</span>
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta" data-tema-id="tablas_hash" data-patron="punteros">
+                        <picture>
+                            <source srcset="./assets/img/dsa/tablas_hash.png" type="image/png">
+                            <img src="./assets/img/dsa/tablas_hash.png" alt="Tablas Hash y clave-valor" loading="lazy" decoding="async">
+                        </picture>
+                        <h3><i class="fa-solid fa-hashtag"></i> Tablas Hash (Hash Maps)</h3>
+                        <p>Asociación de pares clave-valor indexados mediante funciones hash con lecturas y escrituras casi instantáneas en <code>O(1)</code>.</p>
+                        <div class="enlaces-tarjeta">
+                            <button type="button" class="boton-enlace enlace-ficha" data-tema="tablas_hash">
+                                <i class="fa-solid fa-file-lines"></i> Ficha
+                            </button>
+                            <a href="https://visualgo.net/es/hashtable" target="_blank" class="boton-enlace enlace-simulador">
+                                <i class="fa-solid fa-play"></i> Simulador
+                            </a>
+                            <button type="button" class="boton-enlace btn-check-tema" data-tema-check="tablas_hash" title="Marcar como completado">
+                                <i class="fa-regular fa-circle-check"></i> <span class="texto-check">Completar</span>
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- NIVEL 3 -->
+            <div id="nivel-3" class="bloque-nivel">
+                <div class="cabecera-nivel nivel-3">
+                    <h3 class="titulo-modulo-nivel">Nivel 3: Estructuras No Lineales, Grafos y Programación Dinámica</h3>
+                    <p class="descripcion-modulo-nivel">Modelado de redes complejas, árboles jerárquicos y optimización con subestructuras óptimas.</p>
+                </div>
+
+                <div class="contenedor-tarjetas">
+                    <article class="tarjeta" data-tema-id="arboles" data-patron="redes">
+                        <picture>
+                            <source srcset="./assets/img/dsa/arboles.jpg" type="image/jpeg">
+                            <img src="./assets/img/dsa/arboles.jpg" alt="Árboles de búsqueda binaria" loading="lazy" decoding="async">
+                        </picture>
+                        <h3><i class="fa-solid fa-sitemap"></i> Árboles Binarios (BST)</h3>
+                        <p>Estructuras jerárquicas con regla de orden: subárbol izquierdo menor a la raíz y derecho mayor, acelerando búsquedas en <code>O(log n)</code>.</p>
+                        <div class="enlaces-tarjeta">
+                            <button type="button" class="boton-enlace enlace-ficha" data-tema="arboles">
+                                <i class="fa-solid fa-file-lines"></i> Ficha
+                            </button>
+                            <a href="https://visualgo.net/es/bst" target="_blank" class="boton-enlace enlace-simulador">
+                                <i class="fa-solid fa-play"></i> Simulador
+                            </a>
+                            <button type="button" class="boton-enlace btn-check-tema" data-tema-check="arboles" title="Marcar como completado">
+                                <i class="fa-regular fa-circle-check"></i> <span class="texto-check">Completar</span>
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta" data-tema-id="grafos" data-patron="redes">
+                        <picture>
+                            <source srcset="./assets/img/dsa/grafos.png" type="image/png">
+                            <img src="./assets/img/dsa/grafos.png" alt="Grafos y algoritmos de rutas" loading="lazy" decoding="async">
+                        </picture>
+                        <h3><i class="fa-solid fa-diagram-project"></i> Grafos & Algoritmo Dijkstra</h3>
+                        <p>Modelado de redes compuestas por vértices y aristas con peso para calcular rutas óptimas y caminos mínimos en <code>O(E log V)</code>.</p>
+                        <div class="enlaces-tarjeta">
+                            <button type="button" class="boton-enlace enlace-ficha" data-tema="grafos">
+                                <i class="fa-solid fa-file-lines"></i> Ficha
+                            </button>
+                            <a href="https://visualgo.net/es/sssp" target="_blank" class="boton-enlace enlace-simulador">
+                                <i class="fa-solid fa-play"></i> Simulador
+                            </a>
+                            <button type="button" class="boton-enlace btn-check-tema" data-tema-check="grafos" title="Marcar como completado">
+                                <i class="fa-regular fa-circle-check"></i> <span class="texto-check">Completar</span>
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta" data-tema-id="dinamica" data-patron="dp">
+                        <picture>
+                            <source srcset="./assets/img/dsa/dinamica.png" type="image/png">
+                            <img src="./assets/img/dsa/dinamica.png" alt="Programación Dinámica y optimización" loading="lazy" decoding="async">
+                        </picture>
+                        <h3><i class="fa-solid fa-brain"></i> Programación Dinámica (DP)</h3>
+                        <p>Estrategia de optimización matemática que resuelve problemas subdividiéndolos y almacenando resultados con memoización y tabulación.</p>
+                        <div class="enlaces-tarjeta">
+                            <button type="button" class="boton-enlace enlace-ficha" data-tema="dinamica">
+                                <i class="fa-solid fa-file-lines"></i> Ficha
+                            </button>
+                            <a href="https://visualgo.net/es/dp" target="_blank" class="boton-enlace enlace-simulador">
+                                <i class="fa-solid fa-play"></i> Simulador
+                            </a>
+                            <button type="button" class="boton-enlace btn-check-tema" data-tema-check="dinamica" title="Marcar como completado">
+                                <i class="fa-regular fa-circle-check"></i> <span class="texto-check">Completar</span>
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta" data-tema-id="monticulos" data-patron="redes">
+                        <picture>
+                            <source srcset="./assets/img/dsa/monticulo.png" type="image/png">
+                            <img src="./assets/img/dsa/monticulo.png" alt="Montículos y colas de prioridad" loading="lazy" decoding="async">
+                        </picture>
+                        <h3><i class="fa-solid fa-mountain"></i> Montículos (Heaps)</h3>
+                        <p>Árboles binarios casi completos especializados para colas de prioridad con recuperación instantánea del elemento prioritario en <code>O(1)</code>.</p>
+                        <div class="enlaces-tarjeta">
+                            <button type="button" class="boton-enlace enlace-ficha" data-tema="monticulos">
+                                <i class="fa-solid fa-file-lines"></i> Ficha
+                            </button>
+                            <a href="https://visualgo.net/es/heap" target="_blank" class="boton-enlace enlace-simulador">
+                                <i class="fa-solid fa-play"></i> Simulador
+                            </a>
+                            <button type="button" class="boton-enlace btn-check-tema" data-tema-check="monticulos" title="Marcar como completado">
+                                <i class="fa-regular fa-circle-check"></i> <span class="texto-check">Completar</span>
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal de Ficha Técnica del Algoritmo -->
+        <div id="modal-ficha-algoritmo" class="modal-superposicion" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-ficha-titulo">
+            <div class="modal-contenedor">
+                <div class="modal-cabecera">
+                    <h3 id="modal-ficha-titulo" class="modal-titulo">
+                        <i class="fa-solid fa-layer-group"></i> Ficha Técnica
+                    </h3>
+                    <button type="button" class="modal-boton-cerrar" data-cerrar-modal aria-label="Cerrar modal">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="modal-cuerpo" id="modal-ficha-cuerpo">
+                    <!-- Contenido dinámico inyectado por JS -->
+                </div>
+                <div class="modal-pie">
+                    <a id="modal-ficha-simulador" href="#" target="_blank" class="boton-primario">
+                        <i class="fa-solid fa-play"></i> Abrir en Simulador
+                    </a>
+                    <a id="modal-ficha-wiki" href="#" target="_blank" class="boton-secundario">
+                        <i class="fa-brands fa-wikipedia-w"></i> Documentación
+                    </a>
+                    <button type="button" class="boton-secundario" data-cerrar-modal>Cerrar</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="pie-rejilla">
+            <div class="columna-pie">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                    <img src="./assets/img/logo_taller.png" alt="Logo Taller de Programación Web" style="height: 38px; width: auto; object-fit: contain; border-radius: 6px; background: #fff; padding: 2px;" loading="lazy">
+                    <h4 style="margin: 0;">AlgoSchool DSA</h4>
+                </div>
+                <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">
+                    Portal educativo desarrollado para el curso de <strong>Taller de Programación Web (PC2)</strong>.
+                </p>
+                <div style="display: flex; gap: 10px; font-size: 18px; color: var(--text-secondary);">
+                    <a href="https://github.com" target="_blank" aria-label="GitHub" style="color: inherit;"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://developer.mozilla.org" target="_blank" aria-label="MDN Web Docs" style="color: inherit;"><i class="fa-brands fa-firefox-browser"></i></a>
+                    <a href="https://w3schools.com" target="_blank" aria-label="W3Schools" style="color: inherit;"><i class="fa-solid fa-graduation-cap"></i></a>
+                </div>
+            </div>
+
+            <div class="columna-pie">
+                <h4>Rutas y Complejidad</h4>
+                <ul>
+                    <li><a href="ruta.html#nivel-1"><i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i> Nivel 1: Conceptos Básicos</a></li>
+                    <li><a href="ruta.html#nivel-2"><i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i> Nivel 2: Intermedios</a></li>
+                    <li><a href="ruta.html#nivel-3"><i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i> Nivel 3: Avanzados</a></li>
+                    <li><a href="complejidad.html#tablas"><i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i> Notación Big O</a></li>
+                    <li><a href="complejidad.html#categorias"><i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i> Categorías de Algoritmos</a></li>
+                </ul>
+            </div>
+
+            <div class="columna-pie">
+                <h4>Recursos y Soporte</h4>
+                <ul>
+                    <li><a href="recursos.html#simuladores"><i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i> Simuladores Visuales</a></li>
+                    <li><a href="recursos.html#practicar"><i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i> Desafíos de Código</a></li>
+                    <li><a href="recursos.html#libros"><i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i> Libros Recomendados</a></li>
+                    <li><a href="recursos.html#multimedia"><i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i> Recursos Multimedia</a></li>
+                    <li><a href="soporte.html#ayuda"><i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i> Centro de Ayuda FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pie-inferior">
+            <p>&copy; 2026 <strong>AlgoSchool DSA</strong></p>
+            <p>Estructuras de Datos y Algoritmos</p>
+        </div>
+    </footer>
+
+    <!-- Boton flotante volver arriba -->
+    <button id="boton-volver-arriba" class="boton-volver-arriba" aria-label="Volver al inicio" title="Volver al inicio">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts de interactividad -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
